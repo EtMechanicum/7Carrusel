@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyeqs02bc5aik"]
+
+[ext_resource type="Texture2D" uid="uid://bktg66piu7axs" path="res://sprites/bumbo.png" id="1_lb6uw"]
+[ext_resource type="Script" uid="uid://4tog007fxwya" path="res://scripts/bumbo.gd" id="1_p81yr"]
+
+[node name="Bumbo" type="Node2D"]
+script = ExtResource("1_p81yr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_lb6uw")

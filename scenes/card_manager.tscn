@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://b47161dhxhvjk"]
+
+[ext_resource type="Script" uid="uid://c1m72uw11cr0d" path="res://scripts/card_manager.gd" id="1_lb6jb"]
+[ext_resource type="PackedScene" uid="uid://bwisgmnldyke7" path="res://scenes/hand.tscn" id="2_untj4"]
+[ext_resource type="PackedScene" uid="uid://ccbv1kcnll2" path="res://scenes/card_slot.tscn" id="3_6qhmb"]
+
+[node name="CardManager" type="Node2D"]
+script = ExtResource("1_lb6jb")
+hand = ExtResource("2_untj4")
+card_slot = ExtResource("3_6qhmb")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://571hicv31dhv"]
+
+[ext_resource type="Script" uid="uid://cb1kcqy6jox7m" path="res://scripts/marble.gd" id="1_bj782"]
+[ext_resource type="Texture2D" uid="uid://bprbusvv32fqf" path="res://sprites/marble.png" id="1_il0lc"]
+
+[node name="Marble" type="Node2D"]
+script = ExtResource("1_bj782")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_il0lc")
