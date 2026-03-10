@@ -2,5 +2,5 @@ extends Resource
 
 class_name Effect
 
-func apply(target):
+func apply(roll_result, target):
 	pass

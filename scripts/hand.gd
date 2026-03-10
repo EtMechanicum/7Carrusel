@@ -10,6 +10,8 @@ func _ready() -> void:
 		var card = card_factory.create_bomb(get_parent().get_parent().get_node("EnemyMarble"))
 		add_child(card)
 		card.position = Vector2(100 + i*120, 400) #Adds a margin of 100 for the first card
+		var game = get_tree().get_root().get_node("Game")
+		card.card_played.connect(game._on_card_played)
 		card.remove_me.connect(_on_child_remove_me)
 		cards.append(card)
 

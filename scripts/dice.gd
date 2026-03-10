@@ -1,11 +1,12 @@
 extends Node2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
-func _on_card_played(card):
-	$Dice.roll(card)
+	position = Vector2(360, 60)
+	
+func roll(card):
+	card.data.effect.apply(randi() % 12, card.target)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

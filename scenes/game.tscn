@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bod6j4knganjw"]
+[gd_scene load_steps=6 format=3 uid="uid://bod6j4knganjw"]
 
 [ext_resource type="Script" uid="uid://dbp68jb1wdpuh" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://b47161dhxhvjk" path="res://scenes/card_manager.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://571hicv31dhv" path="res://scenes/marble.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cyeqs02bc5aik" path="res://scenes/bumbo.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b1o3m2hv1ox0f" path="res://scenes/dice.tscn" id="5_iywne"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lbhrr")
@@ -13,3 +14,5 @@ script = ExtResource("1_lbhrr")
 [node name="EnemyMarble" parent="." instance=ExtResource("2_lnu2h")]
 
 [node name="Bumbo" parent="." instance=ExtResource("3_lnu2h")]
+
+[node name="Dice" parent="." instance=ExtResource("5_iywne")]

@@ -3,6 +3,7 @@ class_name Card
 var data = CardData.new()
 var target
 signal remove_me(node)
+signal card_played(card)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _process(delta: float) -> void:
 func _on_click_on_card(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		print("you're clicking a card")
-		data.effect.apply(target)
+		emit_signal("card_played", self)
 		die()
 		
 func die():
