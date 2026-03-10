@@ -7,7 +7,8 @@ var cards = []
 func _ready() -> void:
 	for i in range(5):
 		#for now it creates only bomb cards
-		var card = card_factory.create_bomb(get_parent().get_parent().get_node("EnemyMarble"))
+		var card = card_factory.create_card(get_parent().get_parent().get_node("EnemyMarble"), 
+			randi() % 2)
 		add_child(card)
 		card.position = Vector2(100 + i*120, 400) #Adds a margin of 100 for the first card
 		var game = get_tree().get_root().get_node("Game")
@@ -22,9 +23,20 @@ func rearrange_cards_position() -> void:
 			card.position = Vector2(100 + i*120, 400)
 			i += 1
 
+func add_card_to_hand():
+	var card = card_factory.create_card(get_parent().get_parent().get_node("EnemyMarble"),
+		randi() % 2) #%2 since at the moment we only got two types of cards lol
+	add_child(card)
+	card.position = Vector2(100 + (cards.size() + 1)*120, 400) #Adds a margin of 100 for the first card
+	var game = get_tree().get_root().get_node("Game")
+	card.card_played.connect(game._on_card_played)
+	card.remove_me.connect(_on_child_remove_me)
+	cards.append(card)
+
 func _on_child_remove_me(node):
 	node.queue_free()
 	cards.erase(node)
+	add_card_to_hand()
 	rearrange_cards_position()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
