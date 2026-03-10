@@ -5,9 +5,18 @@ var target
 signal remove_me(node)
 signal card_played(card)
 
+func set_data(new_data: CardData):
+	data = new_data
+	update_visual()
+
+func update_visual():
+	if data and data.texture:
+		$Sprite2D.texture = data.texture
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if data and data.texture:
+		$Sprite2D.texture = data.texture
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:

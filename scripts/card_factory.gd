@@ -2,13 +2,22 @@ extends Node
 class_name CardFactory
 var card_scene = preload("res://scenes/card.tscn")
 func create_card(marble, card_index):
+
 	var card = card_scene.instantiate()
+	var data = CardData.new()
+
 	match card_index:
 		0:
-			card.data.name = "bomb"
-			card.data.effect = BombEffect.new()
+			data.name = "bomb"
+			data.effect = BombEffect.new()
+			data.texture = preload("res://sprites/cards/bomb.png")
+
 		1:
-			card.data.name = "penguin"
-			card.data.effect = ThePenguin.new()
+			data.name = "penguin"
+			data.effect = ThePenguin.new()
+			data.texture = preload("res://sprites/cards/penguin.png")
+
+	card.set_data(data)
 	card.target = marble
+
 	return card

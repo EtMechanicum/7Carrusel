@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7tweu4htj7ky"]
+[gd_scene load_steps=3 format=3 uid="uid://c7tweu4htj7ky"]
 
 [ext_resource type="Script" uid="uid://cw4b7b7c8pbkc" path="res://scripts/card.gd" id="1_6u4wf"]
-[ext_resource type="Texture2D" uid="uid://kmkuf0hcnf5j" path="res://sprites/cards.png" id="1_d81rb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]
 size = Vector2(63, 87)
@@ -11,9 +10,6 @@ script = ExtResource("1_6u4wf")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_d81rb")
-region_enabled = true
-region_rect = Rect2(67, 104, 66, 88)
 
 [node name="Area2D" type="Area2D" parent="."]
 
