@@ -33,5 +33,10 @@ func _on_click_on_card(viewport: Node, event: InputEvent, shape_idx: int) -> voi
 		emit_signal("card_played", self)
 		die()
 		
+func enemy_plays_card():
+	print("The enemy has played a card")
+	emit_signal("card_played", self)
+	die()
+
 func die():
 	emit_signal("remove_me", self)

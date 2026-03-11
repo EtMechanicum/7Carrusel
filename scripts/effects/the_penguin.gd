@@ -78,3 +78,4 @@ func apply(roll_result, target):
 			target.entropy += 25
 			target.boid += 50
 	target.print_status()
+	target.notify_end_turn()

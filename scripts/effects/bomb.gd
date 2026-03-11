@@ -42,3 +42,4 @@ func apply(roll_result, target):
 			print("case 12")
 			print("nuclear fury")
 			target.take_damage(base_damage * 64)
+	target.notify_end_turn()
