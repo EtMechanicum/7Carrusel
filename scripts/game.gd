@@ -25,6 +25,7 @@ func first_turn():
 func _on_enemy_marble_property_list_changed() -> void:
 	#Enemy's turn starts
 	players_turn = false
+	print("it's enemy's turn")
 	$EnemyCardManager.enemy_turn()
 	
 
@@ -32,4 +33,6 @@ func _on_enemy_marble_property_list_changed() -> void:
 func _on_player_marble_property_list_changed() -> void:
 	#Player's turn starts
 	players_turn = true
+	print("it's player's turn")
+	
 	
