@@ -39,7 +39,7 @@ func check_end_game():
 	if(entropy == 100):
 		dead = true
 		return "Entropy collapse"
-	if(boid >= 85 and consciousness["spiritualiy"] >= 70 and 
+	if(boid >= 85 and consciousness["spirituality"] >= 70 and 
 		consciousness["logical thinking"] < 30):
 		dead = true
 		return "Cosmic awakening"
@@ -59,7 +59,21 @@ func check_end_game():
 	return "checked"
 
 func print_status():
-	print("integrity: {0}, entropy: {1}, void: {2}".format([integrity, entropy, boid]))
+	var result := ""
+	
+	result += "Integrity: %d\n" % integrity
+	
+	result += "Consciousness:\n"
+	result += "  - Logical Thinking: %d\n" % consciousness["logical thinking"]
+	result += "  - Morality: %d\n" % consciousness["morality"]
+	result += "  - Spirituality: %d\n" % consciousness["spirituality"]
+	
+	result += "Silence: %d\n" % silence
+	result += "Entropy: %d\n" % entropy
+	result += "Boid: %d\n" % boid
+	
+	print("Enemy's world status:")
+	print(result)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

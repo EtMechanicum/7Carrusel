@@ -5,7 +5,7 @@ var card_factory = CardFactory.new()
 var cards = []
 const X_POS = 120
 const Y_POS = 500
-const CARDS_AVAILABLE = 3
+const CARDS_AVAILABLE = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(5):

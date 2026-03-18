@@ -1,0 +1,18 @@
+extends Effect
+class_name 
+
+#base stats
+
+var msgs = [
+]
+
+func apply(roll_result, target):
+	print(msgs[roll_result])
+	target. += *multiplyers[roll_result]
+	target. += *multiplyers[roll_result]
+	target. += *multiplyers[roll_result]
+	target.print_status()
+	target.notify_end_turn()
+
+	target.print_status()
+	target.notify_end_turn()

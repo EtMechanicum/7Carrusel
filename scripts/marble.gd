@@ -72,6 +72,7 @@ func print_status():
 	result += "Entropy: %d\n" % entropy
 	result += "Boid: %d\n" % boid
 	
+	print("Player's world status:")
 	print(result)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
