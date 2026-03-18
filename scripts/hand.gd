@@ -5,12 +5,13 @@ var card_factory = CardFactory.new()
 var cards = []
 const X_POS = 120
 const Y_POS = 500
+const CARDS_AVAILABLE = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(5):
 		#for now it creates only bomb cards
 		var card = card_factory.create_card(get_parent().get_parent().get_node("EnemyMarble"), 
-			randi() % 2)
+			randi() % CARDS_AVAILABLE)
 		add_child(card)
 		card.position = Vector2(100 + i*X_POS, Y_POS) #Adds a margin of 100 for the first card
 		var game = get_tree().get_root().get_node("Game")
@@ -27,7 +28,7 @@ func rearrange_cards_position() -> void:
 
 func add_card_to_hand():
 	var card = card_factory.create_card(get_parent().get_parent().get_node("EnemyMarble"),
-		randi() % 2) #%2 since at the moment we only got two types of cards lol
+		randi() % CARDS_AVAILABLE)
 	add_child(card)
 	card.position = Vector2(100 + (cards.size() + 1)*X_POS, Y_POS) #Adds a margin of 100 for the first card
 	var game = get_tree().get_root().get_node("Game")

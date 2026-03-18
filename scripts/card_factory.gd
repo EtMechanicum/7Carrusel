@@ -16,8 +16,10 @@ func create_card(marble, card_index):
 			data.name = "penguin"
 			data.effect = ThePenguin.new()
 			data.texture = preload("res://sprites/cards/penguin.png")
-
+		2:
+			data.name = "lonely flower"
+			data.effect = LonelyFlower.new()
+			data.texture = preload("res://sprites/cards/flower.png")
 	card.set_data(data)
 	card.target = marble
-
 	return card
